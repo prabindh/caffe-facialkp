@@ -7,9 +7,9 @@ from skimage import transform
 from numpy import ravel
 
 # Make sure that caffe is on the python path:
-#caffe_root = './caffe/'  # this file is expected to be in {caffe_root}/examples
-#import sys
-#sys.path.append(caffe_root + 'python')
+caffe_root = '/home/prabindh/caffe/'  # this file is expected to be in {caffe_root}/examples
+import sys
+sys.path.append(caffe_root + 'python')
 
 import caffe
 
@@ -74,7 +74,7 @@ print 'Input Data shape: ', data.shape
 print 'Total batches: ', batches
 
 
-net = caffe.Net(MODEL_FILE,PRETRAINED)
+net = caffe.Net(MODEL_FILE,PRETRAINED, caffe.TEST)
 net.set_mode_gpu()
 
 
